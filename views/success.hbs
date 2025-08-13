@@ -1,0 +1,18 @@
+<main>
+  <div class="mt-40 text-center text-success">
+    <h1>
+      <i class="far fa-check-circle"></i> 
+      Success!
+    </h1>
+  </div>
+  <div class="mt-40 text-center">
+    <div class="mt-20 text-center text-secondary border-placeholder">
+      {{!Jill: Add details about the payment here: START}}
+      <p><strong>Payment Intent ID:</strong> {{payment_intent_id}}</p>
+      <p><strong>Payment Status:</strong> {{payment_status}}</p>
+      <p><strong>Intent Status:</strong> {{intent_status}}</p>
+      <p><strong>Total Amount:</strong> {{currency}} {{amount_total}}</p>
+      {{!Jill: Add details about the payment here: END}}
+    </div>
+  </div>
+</main>
