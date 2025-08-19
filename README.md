@@ -68,6 +68,7 @@ My checkout flow is supported by only two APIs - both implemented via the Stripe
 - Express app renders Handlebars templates (index.hbs, checkout.hbs, success.hbs)
 - Integrates with the Stripe server SDK using the secret key
 - Creates and retrieves Checkout Sessions via stripe.checkout.sessions.create and stripe.checkout.sessions.retrieve
+  <br>
 
 **Client-side: checkout.js**
 
