@@ -11,13 +11,14 @@ git clone https://github.com/jillianchi/jillian-payment-element
 cd jillian-payment-element
 npm install
 ```
+
 <br>
 
-**2.  Configure**
+**2. Configure**
 
 Rename `sample.env` to `.env` and populate with your Stripe account's test API keys
 
-Replace the hardcoded STRIPE_PUBLISHABLE_KEY on public/js/checkout.js (starting with pk_) with your Stripe account's test API key
+Replace the hardcoded STRIPE*PUBLISHABLE_KEY on public/js/checkout.js (starting with pk*) with your Stripe account's test API key
 
 <br>
 
@@ -39,9 +40,9 @@ Open [http://localhost:3000](http://localhost:3000) on your browser to view the 
 
 The application leverages on Stripe Payment Elements - which seamlessly embeds a Stripe UI component onto the Checkout page. Everything inside this component is fully hosted by Stripe - which means as a merchant I do not need to be plagued by the
 
-   (i) complexity of building and maintaining payment UI,\
-   (ii) burden of PCI-DSS compliance, and\
-   (iii) management of security and fraud detection
+(i) complexity of building and maintaining payment UI,\
+ (ii) burden of PCI-DSS compliance, and\
+ (iii) management of security and fraud detection
 
 <br>
 
@@ -62,12 +63,12 @@ My checkout flow is supported by only two APIs - both implemented via the Stripe
 
 <br>
 
-**Server side: app.js**\
+**Server-side: app.js**\
 Express app renders Handlebars templates (index.hbs, checkout.hbs, success.hbs)\
 Integrates with the Stripe server SDK using the secret key\
 Creates and retrieves Checkout Sessions via stripe.checkout.sessions.create and stripe.checkout.sessions.retrieve
 
-**Client side: checkout.js**\
+**Client-side: checkout.js**\
 Browser loads Stripe.js with the publishable key\
 The script fetches a Checkout Session client_secret from the server, initializes stripe.initCheckout(), mounts the Payment Element into the page, and calls checkout.confirm() when the user clicks Pay\
 Stripe.js directly handles payment details, then redirects the browser to /success
