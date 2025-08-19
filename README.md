@@ -28,6 +28,7 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) on your browswer to view the index page.
 
+
 ## How does the solution work? Which Stripe APIs does it use? How is your application architected?
 
 **1. How does the solution work?**
@@ -48,6 +49,7 @@ My checkout flow is supported by only two APIs - both implemented via the Stripe
 (ii) Retrieve a Checkout Session: GET /v1/checkout/sessions/:id to check the payment status
 
 **3. How is your application architected?**
+
 
 ## How did you approach this problem? Which docs did you use to complete the project? What challenges did you encounter?
 
@@ -73,6 +75,7 @@ Keep as much as possible from project template (https://github.com/mattmitchell6
 Honestly didn't think I was going to make it without AI since my development skills is close to null. It was also a race against time with my current workload - I had to convince myself to be okay with delivering the bare minimum.
 
 But thank goodness this is Stripe and the documentation lived up to its expectation so atleast I've got the basic requirements up and running. Living proof of how seamless a Stripe implementation can be - even for non-developers.
+
 
 ## How you might extend this if you were building a more robust instance of the same application.
 
