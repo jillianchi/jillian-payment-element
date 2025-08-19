@@ -48,7 +48,7 @@ The application leverages on Stripe Payment Elements - which seamlessly embeds a
 
 **2. Which Stripe APIs does it use?**
 
-I'm looking for a simple and fuss-free solution hence the Checkout Session API is exactly what I need - no extra logic or validation required from my end.
+I'm looking for a simple and fuss-free solution hence I went for the Checkout Session API - no extra logic or validation required from my end.
 
 My checkout flow is supported by only two APIs - both implemented via the Stripe Node.js SDK on the server:
 
@@ -66,14 +66,14 @@ My checkout flow is supported by only two APIs - both implemented via the Stripe
 **Server-side: app.js**
 
 - Express app renders Handlebars templates (index.hbs, checkout.hbs, success.hbs)
-- Integrates with the Stripe server SDK using the secret key
+- Integrates with the Stripe server SDK using STRIPE_SECRET_KEY
 - Creates and retrieves Checkout Sessions via stripe.checkout.sessions.create and stripe.checkout.sessions.retrieve
 
   <br>
 
 **Client-side: checkout.js**
 
-- Browser loads Stripe.js with the publishable key
+- Browser loads Stripe.js with STRIPE_PUBLISHABLE_KEY
 - The script fetches a Checkout Session client_secret from the server, initializes stripe.initCheckout(), mounts the Payment Element into the page, and calls checkout.confirm() when the user clicks Pay
 - Stripe.js directly handles payment details, then redirects the browser to /success
   <br>
@@ -90,7 +90,7 @@ Gives me all the context I need on this service\
 https://docs.stripe.com/payments/payment-element
 
 **Step 2:** Select from Compatible APIs on doc\
-Simplicity is key - hence Checkout Sessions is the easy choice\
+Simplicity is key - hence Checkout Sessions\
 https://docs.stripe.com/payments/payment-element#compatible-apis
 
 **Step 3:** Follow the Embedded Components guide step-by-step\
@@ -102,7 +102,7 @@ Keep as much as possible from project template (https://github.com/mattmitchell6
 
 **2. What challenges did you face?**
 
-Honestly didn't think I was going to make it without AI since my development skills is close to null. It was also a race against time with my current workload - I had to convince myself to be okay with delivering the bare minimum
+Honestly didn't think I was going to make it without AI since my development skills is close to null. It was also a race against time with my recent schedule - I had to convince myself to be okay with delivering the bare minimum
 
 But thank goodness this is Stripe and the documentation lived up to its expectation so atleast I've got the basic requirements up and running. Living proof of how seamless a Stripe implementation can be - even for non-developers.
 <br>
@@ -112,14 +112,14 @@ But thank goodness this is Stripe and the documentation lived up to its expectat
 
 A more robust instance can sit anywhere between the current application and a fully-fleged enterprise level e-commerce operation
 
-First step would be to have catalog data stored in a database rather than hard-coded in the app - which can be retrieved via API
+First step would be to have catalog data stored in a database rather than hard-coded in the app - which can be retrieved via API.
 
 To scale, key features can be isolated as microservices e.g.\
 (i) Catalog manages product information\
 (ii) Pricing and Inventory for product availability\
 (iii) Logistics for shipping and fulfillment
 
-With proper APIs in place for interaction between the services the operation can scale to leverage on enterprice systems e.g.\
+With proper APIs in place for interaction between the services the operation can scale to leverage on enterprise systems e.g.\
 (i) PIM (or a separate database) to manage catalog information\
 (ii) ERP as the source oef truth for prices and inventory\
 (iii) WMS to account for logictics and shipping rates
