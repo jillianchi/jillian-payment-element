@@ -2,7 +2,7 @@
 
 ## How to build, configure and run your application.
 
-1. Build
+**1. Build**
 
 Clone the repository and install dependencies
 
@@ -12,13 +12,13 @@ cd jillian-payment-element
 npm install
 ```
 
-2.  Configure
+**2.  Configure**
 
 Rename `sample.env` to `.env` and populate with your Stripe account's test API keys
 
-Replace the hardcoded STRIPE*PUBLISHABLE_KEY on public/js/checkout.js (starting with pk*) with your Stripe account's test API key
+Replace the hardcoded STRIPE_PUBLISHABLE_KEY on public/js/checkout.js (starting with pk_) with your Stripe account's test API key
 
-3. Run the application
+**3. Run the application**
 
 Start application locally:
 
@@ -30,27 +30,30 @@ Open [http://localhost:3000](http://localhost:3000) on your browswer to view the
 
 ## How does the solution work? Which Stripe APIs does it use? How is your application architected?
 
-1. How does the solution work?
-   The application leverages on Stripe Payment Elements - which seamlessly embeds a Stripe UI component onto the Checkout page. Everything inside this component is fully hosted by Stripe - which means as a merchant I do not need to be plagued by the
+**1. How does the solution work?**
+
+The application leverages on Stripe Payment Elements - which seamlessly embeds a Stripe UI component onto the Checkout page. Everything inside this component is fully hosted by Stripe - which means as a merchant I do not need to be plagued by the
 
    (i) complexity of building and maintaining payment UI,
    (ii) burden of PCI-DSS compliance, and
    (iii) management of security and fraud detection
 
-2. Which Stripe APIs does it use?
-   I'm looking for a simple and fuss-free solution hence the Checkout Session API is exactly what I need - no extra logic or valdation required from my end.
+**2. Which Stripe APIs does it use?**
 
-   My checkout flow is supported by only two APIs - both implemented via the Stripe Node.js SDK on the server:
+I'm looking for a simple and fuss-free solution hence the Checkout Session API is exactly what I need - no extra logic or valdation required from my end.
 
-   (i) Create a Checkout Session: POST /v1/checkout/sessions to start the payment
-   (ii) Retrieve a Checkout Session: GET /v1/checkout/sessions/:id to check the payment status
+My checkout flow is supported by only two APIs - both implemented via the Stripe Node.js SDK on the server:
 
-3. How is your application architected?
+(i) Create a Checkout Session: POST /v1/checkout/sessions to start the payment
+(ii) Retrieve a Checkout Session: GET /v1/checkout/sessions/:id to check the payment status
+
+**3. How is your application architected?**
 
 ## How did you approach this problem? Which docs did you use to complete the project? What challenges did you encounter?
 
-1. How did you approach this problem? Which docs did you use to complete the project?
-   Since I am no developer the only possible way around this would be for me to stick to Stripe documentation as close as possible
+**1. How did you approach this problem? Which docs did you use to complete the project?**
+
+Since I am no developer the only possible way around this would be for me to stick to Stripe documentation as close as possible
 
 Step 1: Google Stripe Payment Element
 Gives me all the context I need on this service
@@ -65,8 +68,9 @@ Keep as much as possible from project template (https://github.com/mattmitchell6
 
 /public/js/checkout.js is literally taken wholesale from the documentation
 
-2. What challenges did you face?
-   Honestly didn't think I was going to make it without AI since my development skills is close to null. It was also a race against time with my current workload - I had to convince myself to be okay with delivering the bare minimum.
+**2. What challenges did you face?**
+
+Honestly didn't think I was going to make it without AI since my development skills is close to null. It was also a race against time with my current workload - I had to convince myself to be okay with delivering the bare minimum.
 
 But thank goodness this is Stripe and the documentation lived up to its expectation so atleast I've got the basic requirements up and running. Living proof of how seamless a Stripe implementation can be - even for non-developers.
 
