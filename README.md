@@ -50,7 +50,7 @@ The application leverages on Stripe Payment Elements - which seamlessly embeds a
 
 I'm looking for a simple and fuss-free solution hence I went for the Checkout Session API - no extra logic or validation required from my end.
 
-My checkout flow is supported by only two APIs - both implemented via the Stripe Node.js SDK on the server:
+The checkout flow is supported by only two APIs - both implemented via the Stripe Node.js SDK on the server:
 
 (i) Create a Checkout Session: POST /v1/checkout/sessions to start the payment\
 (ii) Retrieve a Checkout Session: GET /v1/checkout/sessions/:id to check the payment status
