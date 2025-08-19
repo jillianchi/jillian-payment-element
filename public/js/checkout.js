@@ -1,6 +1,6 @@
 //Jill: 100% from https://docs.stripe.com/checkout/custom/quickstart
 const stripe = Stripe(
-  "pk_test_51RuqvMIk9V5T0vLoVYZ7cRI1tZmCQY5JAA5TH2vee5k8xrg30ooeNRGPKWMnsrvAVGjlj9kj0jDecGHPuu46bGhC005iERMAVs"
+  "pk_test_51RuqvMIk9V5T0vLoVYZ7cRI1tZmCQY5JAA5TH2vee5k8xrg30ooeNRGPKWMnsrvAVGjlj9kj0jDecGHPuu46bGhC005iERMAVs" //Jill: update PK here
 );
 
 let checkout;
