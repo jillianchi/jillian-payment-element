@@ -41,7 +41,7 @@ The application leverages on Stripe Payment Elements - which seamlessly embeds a
 
 **2. Which Stripe APIs does it use?**
 
-I'm looking for a simple and fuss-free solution hence the Checkout Session API is exactly what I need - no extra logic or valdation required from my end.
+I'm looking for a simple and fuss-free solution hence the Checkout Session API is exactly what I need - no extra logic or validation required from my end.
 
 My checkout flow is supported by only two APIs - both implemented via the Stripe Node.js SDK on the server:
 
@@ -49,6 +49,12 @@ My checkout flow is supported by only two APIs - both implemented via the Stripe
 (ii) Retrieve a Checkout Session: GET /v1/checkout/sessions/:id to check the payment status
 
 **3. How is your application architected?**
+
+![Architecture Flow](public/images/stripe-flow.jpg)
+
+The app follows a simple client-server architecture. On the server side (app.js), the Express app renders Handlebars templates (index.hbs, checkout.hbs, success.hbs) and integrates with the Stripe server SDK using the secret key. It creates and retrieves Checkout Sessions via stripe.checkout.sessions.create and stripe.checkout.sessions.retrieve.
+
+On the client side (checkout.js), the browser loads Stripe.js with the publishable key. The script fetches a Checkout Session client_secret from the server, initializes stripe.initCheckout(), mounts the Payment Element into the page, and calls checkout.confirm() when the user clicks Pay. Stripe.js securely handles payment details and 3DS authentication, then redirects the browser to /success.
 
 
 ## How did you approach this problem? Which docs did you use to complete the project? What challenges did you encounter?
