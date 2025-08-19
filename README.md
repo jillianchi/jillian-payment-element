@@ -16,9 +16,9 @@ npm install
 
 **2. Configure**
 
-Rename `sample.env` to `.env` and populate with your Stripe account's test API keys
+- Rename `sample.env` to `.env` and populate with your Stripe account's test API keys
 
-Replace the hardcoded STRIPE_PUBLISHABLE_KEY on public/js/checkout.js (starting with pk\_) with your Stripe account's test API key
+- Replace the hardcoded STRIPE_PUBLISHABLE_KEY on public/js/checkout.js (starting with pk\_) with your Stripe account's test API key
 
 <br>
 
