@@ -35,8 +35,8 @@ Open [http://localhost:3000](http://localhost:3000) on your browswer to view the
 
 The application leverages on Stripe Payment Elements - which seamlessly embeds a Stripe UI component onto the Checkout page. Everything inside this component is fully hosted by Stripe - which means as a merchant I do not need to be plagued by the
 
-   (i) complexity of building and maintaining payment UI,
-   (ii) burden of PCI-DSS compliance, and
+   (i) complexity of building and maintaining payment UI,\
+   (ii) burden of PCI-DSS compliance, and\
    (iii) management of security and fraud detection
 
 **2. Which Stripe APIs does it use?**
@@ -45,7 +45,7 @@ I'm looking for a simple and fuss-free solution hence the Checkout Session API i
 
 My checkout flow is supported by only two APIs - both implemented via the Stripe Node.js SDK on the server:
 
-(i) Create a Checkout Session: POST /v1/checkout/sessions to start the payment
+(i) Create a Checkout Session: POST /v1/checkout/sessions to start the payment\
 (ii) Retrieve a Checkout Session: GET /v1/checkout/sessions/:id to check the payment status
 
 **3. How is your application architected?**
@@ -57,15 +57,15 @@ My checkout flow is supported by only two APIs - both implemented via the Stripe
 
 Since I am no developer the only possible way around this would be for me to stick to Stripe documentation as close as possible
 
-Step 1: Google Stripe Payment Element
-Gives me all the context I need on this service
+Step 1: Google Stripe Payment Element\
+Gives me all the context I need on this service\
 https://docs.stripe.com/payments/payment-element
 
-Step 2: Select from Compatible APIs on doc
-Simplicity is key - hence Checkout Sessions is the easy choice
+Step 2: Select from Compatible APIs on doc\
+Simplicity is key - hence Checkout Sessions is the easy choice\
 https://docs.stripe.com/payments/payment-element#compatible-apis
 
-Step 3: Follow the Embedded Components guide step-by-step
+Step 3: Follow the Embedded Components guide step-by-step\
 Keep as much as possible from project template (https://github.com/mattmitchell6/sa-takehome-project-node), adding in the key features required to get the embedded component running.
 
 /public/js/checkout.js is literally taken wholesale from the documentation
@@ -83,12 +83,12 @@ A more robust instance can sit anywhere between the current application and a fu
 
 First step would be to have catalog data stored in a database rather than hard-coded in the app - which can be retrieved via API.
 
-To scale, key features can be isolated as microservices e.g.
-(i) Catalog manages product information
-(ii) Pricing and Inventory for product availability
+To scale, key features can be isolated as microservices e.g.\
+(i) Catalog manages product information\
+(ii) Pricing and Inventory for product availability\
 (iii) Logistics for shipping and fulfillment
 
-With proper APIs in place for interaction between the services the operation can scale to leverage on enterprice systems e.g.
-(i) PIM (or a separate database) to manage catalog information
-(ii) ERP as the source oef truth for prices and inventory
+With proper APIs in place for interaction between the services the operation can scale to leverage on enterprice systems e.g.\
+(i) PIM (or a separate database) to manage catalog information\
+(ii) ERP as the source oef truth for prices and inventory\
 (iii) WMS to account for logictics and shipping rates
