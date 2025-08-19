@@ -63,16 +63,16 @@ My checkout flow is supported by only two APIs - both implemented via the Stripe
 
 <br>
 
-**Server-side: app.js**\
+**Server-side: app.js**
 
-- Express app renders Handlebars templates (index.hbs, checkout.hbs, success.hbs)\
-- Integrates with the Stripe server SDK using the secret key\
+- Express app renders Handlebars templates (index.hbs, checkout.hbs, success.hbs)
+- Integrates with the Stripe server SDK using the secret key
 - Creates and retrieves Checkout Sessions via stripe.checkout.sessions.create and stripe.checkout.sessions.retrieve
 
-**Client-side: checkout.js**\
+**Client-side: checkout.js**
 
-- Browser loads Stripe.js with the publishable key\
-- The script fetches a Checkout Session client_secret from the server, initializes stripe.initCheckout(), mounts the Payment Element into the page, and calls checkout.confirm() when the user clicks Pay\
+- Browser loads Stripe.js with the publishable key
+- The script fetches a Checkout Session client_secret from the server, initializes stripe.initCheckout(), mounts the Payment Element into the page, and calls checkout.confirm() when the user clicks Pay
 - Stripe.js directly handles payment details, then redirects the browser to /success
   <br>
   <br>
